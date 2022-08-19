@@ -13,6 +13,7 @@ module "linuxservers" {
   vm_os_simple        = "UbuntuServer"
   public_ip_dns       = ["dahrterraformlinux"] // change to a unique name per datacenter region
   vnet_subnet_id      = module.network.vnet_subnets[0]
+  remote_port         = "22"
 
   depends_on = [azurerm_resource_group.azurerg]
 }
@@ -26,6 +27,7 @@ module "windowsservers" {
   vm_os_simple        = "WindowsServer"
   public_ip_dns       = ["dahrterraformwin"] // change to a unique name per datacenter region
   vnet_subnet_id      = module.network.vnet_subnets[0]
+  remote_port         = "3389"
 
   depends_on = [azurerm_resource_group.azurerg]
 }
