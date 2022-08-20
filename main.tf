@@ -14,6 +14,7 @@ module "linuxservers" {
   public_ip_dns       = ["dahrterraformlinux"] // change to a unique name per datacenter region
   vnet_subnet_id      = module.network.vnet_subnets[0]
   remote_port         = "22"
+  ssh_key             = "id_rsa.pub"
 
   depends_on = [azurerm_resource_group.azurerg]
 }
