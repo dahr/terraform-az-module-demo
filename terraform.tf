@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "example-org-ffa1f3"
     workspaces {
-      name = "azure-resources"
+      name = "terraform-az"
     }
   }
   required_version = ">=0.12"
